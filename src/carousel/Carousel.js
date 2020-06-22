@@ -902,8 +902,7 @@ export default class Carousel extends Component {
             if (IS_ANDROID && this._shouldRepositionScroll(index)) {
                 if (animated) {
                     this._androidRepositioningTimeout = setTimeout(() => {
-                        // Without scroll animation, the behavior is completely buggy...
-                        this._repositionScroll(index, true);
+                        this._repositionScroll(index);
                     }, 400); // Approximate scroll duration on Android
                 } else {
                     this._repositionScroll(index);
